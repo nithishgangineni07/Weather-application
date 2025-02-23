@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="text-white flex items-center justify-center min-h-screen bg-gray-900">
+    <div class="w-full max-w-[450px] bg-gray-800 bg-opacity-70 rounded-2xl p-5 shadow-xl">
+        <h1 class="text-center text-3xl font-bold">Weather <span class="text-blue-400">Forecast</span></h1>
+        <p class="text-center text-sm text-gray-400">Live updates from OpenWeather API</p>
+        
+        <!-- Search Bar -->
+        <div class="mt-4 flex">
+            <input type="text" id="city-input" placeholder="Enter city name" class="w-full p-2 rounded-l-lg bg-gray-700 text-white focus:outline-none">
+            <button id="search-btn" class="bg-blue-500 px-4 rounded-r-lg">🔍</button>
+        </div>
+        <button id="location-btn" class="mt-3 bg-green-500 px-4 py-2 w-full rounded-lg">Use Current Location</button>
+
+        <!-- Recently Searched Cities Dropdown -->
+        <div class="mt-3">
+            <select id="recent-cities" class="hidden w-full p-2 bg-gray-700 text-white rounded-lg">
+                <option value="" disabled selected>Select a recently searched city</option>
+            </select>
+        </div>
+
+        <!-- Error Message -->
+        <div id="error-message" class="hidden text-center text-red-500 mt-3"></div>
+
+        <!-- Weather Display -->
+        <div id="weather-card" class="hidden mt-5 p-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl relative">
+            <p class="text-lg font-bold" id="day">Saturday</p>
+            <p class="text-sm" id="date">January 25th</p>
+            <p class="text-sm flex items-center">📍 <span id="location">City</span></p>
+            <p class="text-5xl font-bold" id="temperature">--°C</p>
+            <p class="text-lg" id="weather-condition">--</p>
+            <div class="flex justify-between mt-3">
+                <div>
+                    <p class="text-sm">MAX TEMP</p>
+                    <p class="text-lg font-bold" id="max-temp">--°C</p>
+                </div>
+                <div>
+                    <p class="text-sm">MIN TEMP</p>
+                    <p class="text-lg font-bold" id="min-temp">--°C</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5-Day Forecast -->
+        <div class="hidden mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4" id="forecast"></div>
+    </div>
+
+    <script src="weather.js"></script>
+</body>
+</html>

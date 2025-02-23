@@ -1,0 +1,51 @@
+body {
+    background: url('https://png.pngtree.com/thumb_back/fh260/background/20220217/pngtree-blue-atmospheric-weather-forecast-illustration-background-image_948664.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+}
+
+.weather-card {
+    background: rgba(66, 66, 66, 0.7);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.error-message {
+    color: red;
+    margin-top: 1rem;
+}
+
+.forecast {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.forecast-item {
+    background: rgba(85, 85, 85, 0.8);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.forecast-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+input[type="text"] {
+    width: calc(100% - 50px);
+}
+
+button {
+    cursor: pointer;
+}
+
+button:focus,
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
